@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'input_page.dart';
 
-void main() => runApp(BMICalculator());
+void main() => runApp(BMICalculator()); // No main colocamos apenas nosso app
 
 class BMICalculator extends StatelessWidget {
+  //geralmente no nosso arquivo main temos bastante temas do nosso app.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
