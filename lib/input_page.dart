@@ -133,10 +133,20 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
                               icon: FontAwesomeIcons.plus,
                             ),
                             SizedBox(width: 10),
                             RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
                               icon: FontAwesomeIcons.minus,
                             ),
                           ],
@@ -159,6 +169,28 @@ class _InputPageState extends State<InputPage> {
                           age.toString(),
                           style: kNumberTextStyle,
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
@@ -179,19 +211,20 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon});
+  RoundIconButton({@required this.icon, @required this.onPressed});
   final IconData icon;
+  final Function onPressed;
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Icon(icon),
       constraints: BoxConstraints.tightFor(
         width: 56,
         height: 56,
       ),
-      shape: CircleBorder(),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       fillColor: Color(0xff4c4f5e),
     );
   }
