@@ -4,9 +4,14 @@ import '../constants.dart';
 import 'input_page.dart';
 
 class ResultsPage extends StatelessWidget {
-  double imc;
-  String resultText;
-  String resultTitle;
+  ResultsPage(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation});
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +46,15 @@ class ResultsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      'OVERWEIGHT',
+                      resultText.toUpperCase(),
                       style: kImcTextStyle,
                     ),
                     Text(
-                      '26.7',
+                      bmiResult,
                       style: kResultNumberTextStyle,
                     ),
                     Text(
-                      'You have a higher than normal body weight',
+                      interpretation,
                       style: kCardTextStyle,
                     ),
                   ],

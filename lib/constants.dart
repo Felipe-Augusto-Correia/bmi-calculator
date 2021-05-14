@@ -33,4 +33,5 @@ const kResultNumberTextStyle = TextStyle(
 const kImcTextStyle = TextStyle(
   fontSize: 20,
   color: Colors.green,
+  fontWeight: FontWeight.bold,
 );
