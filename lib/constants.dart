@@ -19,3 +19,18 @@ const kLargeButtonTextStyle = TextStyle(
   fontSize: 25,
   fontWeight: FontWeight.bold,
 );
+
+const kYourResultTextStyle = TextStyle(
+  fontSize: 45,
+  fontWeight: FontWeight.bold,
+);
+
+const kResultNumberTextStyle = TextStyle(
+  fontSize: 80,
+  fontWeight: FontWeight.w900,
+);
+
+const kImcTextStyle = TextStyle(
+  fontSize: 20,
+  color: Colors.green,
+);
