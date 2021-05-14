@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../constants.dart';
+import 'input_page.dart';
 
 class ResultsPage extends StatelessWidget {
+  double imc;
+  String resultText;
+  String resultTitle;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +61,7 @@ class ResultsPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    return ResultsPage();
+                    return InputPage();
                   }),
                 );
               },
